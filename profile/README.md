@@ -1,12 +1,30 @@
-## Hi there 👋
+## 背景
 
-<!--
+现在云原生领域已经涌现出大量的云原生中间件，如 istio、envoy、argo 等，但这些产品单个拿来使用的时候往往达不到我们系统的要求，或者配置起来很繁琐。比如我们想使用流量泳道等体系化方案时，单纯的改动一个场景不能支持。每个产品都支持体系化的流量泳道方案还有可能出现不协调的情况。在这样背景下【[云原生机甲](https://xie.infoq.cn/article/bd549e87c414431b0bbbe8d18)】的概念应运而生。
 
-**Here are some ideas to get you started:**
+## 概念
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+### 控制面
+
+控制面是[云原生机甲](https://xie.infoq.cn/article/bd549e87c414431b0bbbe8d18)的管理和控制中心，它负责配置和监控服务网格中的各种规则和策略。控制面中包含了一些核心组件，如控制器和服务注册表等。控制面通过与服务机甲交互，来确保服务之间的通信遵循预先设定的规则，并进行流量管理、故障检测和恢复等功能。
+
+### 服务
+
+服务是定义出来的，当我们需要一项功能或能力时，我们可以定义需要的能力接口，业务开发只需要将对应的能力实现即可。
+
+### 算子
+
+提供能力(业务)的程序，一般与服务部署在同一个 pod 上。
+
+### MOCK
+
+在业务开发的算子能力没提供前，可以使用mock组件直接模拟出能力数据。
+
+## 架构图
+
+![image.png](https://upload-images.jianshu.io/upload_images/1487921-8fc3affae578e7d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+## 项目地址
+
+https://github.com/cloudmecha
